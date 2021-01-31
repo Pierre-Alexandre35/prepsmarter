@@ -1,0 +1,8 @@
+ul li{
+    list-style: none;
+    height: 3rem;
+    width: 15rem;
+    border-radius: 10%;
+    border: 1px solid black;
+    margin: 10px;
+}
