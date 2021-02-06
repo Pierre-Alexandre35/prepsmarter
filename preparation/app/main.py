@@ -53,16 +53,28 @@ def contributions():
     return render_template("contributions.html")
 
 
-
+@app.route('/questions')
+def questions():
+    sql = "SELECT * FROM questions WHERE question_id = 9"
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    question_data = cursor.fetchall()
+    print(question_data)
+    return render_template("questions.html", data=question_data)
 
 @app.route('/add_contributor',methods = ['POST', 'GET'])
 def add_contributor():
     name = request.form.get('contrib_name')
     question = request.form.get('question')
+    answer_a = request.form.get('answer_a')
+    answer_b = request.form.get('answer_b')
+    answer_c = request.form.get('answer_c')
+    correct_answer = request.form.get('correct_answer')
     
     sql_1 = "INSERT INTO contributors (name) VALUES (%s)"
     sql_2 = "SELECT contributor_id from contributors WHERE name=(%s)"
-    sql_3 = "INSERT INTO questions (contributor_id, question_text) VALUES (%s, %s)"
+    sql_3 = "INSERT INTO questions (contributor_id, question_text, answer_a, answer_b, answer_c, correct_answer) VALUES (%s, %s, %s, %s, %s, %s)"
+        
         
     cursor = conn.cursor()
     cursor.execute(sql_1, name)
@@ -75,9 +87,11 @@ def add_contributor():
     contrib_id = contrib_val[0][0]
 
     cursor_3 = conn.cursor()
-    cursor_3.execute(sql_3, (contrib_id,question))    
+    cursor_3.execute(sql_3, (contrib_id,question, answer_a, answer_b, answer_c, correct_answer))    
     cursor_3.fetchall()
     conn.commit()
+    
+    
     
 
     

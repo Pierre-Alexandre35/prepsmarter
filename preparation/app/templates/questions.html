@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="question">
+        <div class="container-1">
+            {% for row in data %}
+            <p>{{row}}</p>
+            {% endfor %}
+
+            {% for row in data %}
+            <h3 id="question-text">{{row[2]}}</h3>
+            <ul id="question-options">
+                <li class="question-answer" onclick='checkAnswer(this, "A", `{{row[7]}}`)'>{{row[3]}}</li>
+                <li class="question-answer" onclick='checkAnswer(this, "B", `{{row[7]}}`)'>{{row[4]}}</li>
+                <li class="question-answer" onclick='checkAnswer(this, "C", `{{row[7]}}`)'>{{row[5]}}</li>
+            </ul>
+            {% endfor %}
+        </div>
+    </section>
+<script src="../static/scripts/app.js"></script>
+</body>
+</html>
