@@ -65,6 +65,7 @@ def questions():
 @app.route('/add_contributor',methods = ['POST', 'GET'])
 def add_contributor():
     name = request.form.get('contrib_name')
+    category = request.form.get('category')
     question = request.form.get('question')
     answer_a = request.form.get('answer_a')
     answer_b = request.form.get('answer_b')
@@ -72,26 +73,29 @@ def add_contributor():
     correct_answer = request.form.get('correct_answer')
     
     sql_1 = "INSERT INTO contributors (name) VALUES (%s)"
-    sql_2 = "SELECT contributor_id from contributors WHERE name=(%s)"
-    sql_3 = "INSERT INTO questions (contributor_id, question_text, answer_a, answer_b, answer_c, correct_answer) VALUES (%s, %s, %s, %s, %s, %s)"
+    sql_3 = "INSERT INTO questions (contributor_id, question_text, category) VALUES (%s, %s, %s)"
+    
+    sql_4 = "INSERT INTO answers (question_id, answer_a, answer_b, answer_c, correct_answer) VALUES(%s, %s, %s, %s, %s)"
         
         
     cursor = conn.cursor()
     cursor.execute(sql_1, name)
     cursor.fetchall()
+    contrib_id = cursor.lastrowid
     conn.commit()
     
-    cursor_2 = conn.cursor()
-    cursor_2.execute(sql_2, name)
-    contrib_val = cursor_2.fetchall()
-    contrib_id = contrib_val[0][0]
+
 
     cursor_3 = conn.cursor()
-    cursor_3.execute(sql_3, (contrib_id,question, answer_a, answer_b, answer_c, correct_answer))    
+    cursor_3.execute(sql_3, (contrib_id,question, category))    
     cursor_3.fetchall()
+    question_id = cursor_3.lastrowid
     conn.commit()
     
-    
+    cursor_4 = conn.cursor()
+    cursor_4.execute(sql_4, (question_id,answer_a, answer_b, answer_c, correct_answer))    
+    cursor_4.fetchall()
+    conn.commit() 
     
 
     
