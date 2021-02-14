@@ -15,10 +15,10 @@
 
             <div>
                 <label for="category">category</label>
-                <select name="category" id="">
-                    <option value="economics">Economics</option>
-                    <option value="fixed_income">Fixed Income</option>
-                    <option value="portfolio_management">Portfolio Management</option>
+                <select name="category_id" id="">
+                    {% for category in categories %}
+                        <option value="{{ category[0] }}">{{category[1]}}</option>
+                    {% endfor %}
                 </select>
             </div>
 
