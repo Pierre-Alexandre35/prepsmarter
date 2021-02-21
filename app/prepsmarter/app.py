@@ -2,6 +2,7 @@ from flask import Flask
 
 from prepsmarter.blueprints.page import page
 from prepsmarter.blueprints.admin import admin
+from prepsmarter.blueprints.user import user 
 
 def create_app(settings_override=None):
     """
@@ -20,5 +21,5 @@ def create_app(settings_override=None):
 
     app.register_blueprint(page)
     app.register_blueprint(admin)
-
+    app.register_blueprint(user)
     return app

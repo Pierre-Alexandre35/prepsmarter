@@ -1,20 +1,20 @@
 from flask import Blueprint, render_template, request
 import pymysql
-
+from prepsmarter.extensions import conn 
 
 admin = Blueprint('admin', __name__, template_folder='templates')
 
-conn = pymysql.connect(
-    host = 'localhost',
-    user = 'root',
-    passwd = 'Bonjour2021!',
-    db = 'prepsmarter'
-)
 
 
 @admin.route('/users', methods=['GET'])
 def get_users():
-    return render_template('admin/new-question.html')
+    sql = "SELECT category_id, category_text FROM category"
+    cursor = conn.cursor()
+    cursor.execute(sql)    
+    categories = cursor.fetchall()
+    return render_template('admin/new-question.html', categories=categories)
+
+
 
 
 
