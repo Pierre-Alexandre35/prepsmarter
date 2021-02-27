@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 from prepsmarter.extensions import conn
+from prepsmarter.blueprints.user.forms import (
+    RegisterForm)
 
 user = Blueprint('user', __name__, template_folder='templates')
 
@@ -11,4 +13,6 @@ def login():
 
 @user.route('/new-user',methods = ['POST'])
 def new_user():
-    return "dd"
+    form = RegisterForm(request.form.to_dict())
+    print(form.password)
+    return "0"
