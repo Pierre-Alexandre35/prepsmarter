@@ -5,12 +5,12 @@ from prepsmarter.blueprints.user.hashers import get_hashed_password
 class UserRepository():
     def __init__(self, conn, table):
         self.conn = conn
-        self.table = table 
+        self.table = table  
     
     def add_user(self, User):
-        sql = "INSERT INTO userss (email, password) VALUES (%s, %s)"
+        sql = "INSERT INTO users (email, password, is_active, sign_in_count, current_sign_in_on, last_sign_in_on) VALUES (%s, %s, %s, %s, %s, %s)"
         cursor = self.conn.cursor()
-        cursor.execute(sql, ( User.email, User.password))
+        cursor.execute(sql, ( User.email, User.password, User.active, User.sign_in_count, User.current_sign_in_on, User.last_sign_in_on))
         resp = cursor.fetchall()
         return resp
     
@@ -59,14 +59,3 @@ class UserService():
     def update_password(self, User, new_password):
         User.password = get_hashed_password(new_password)
 
-
-service_a = UserService()
-ua = service_a.register_user('pierre@gmail.com',
-                                     '200799jtm1',
-                                     '2020-01-12',
-                                     True,
-                                     13,
-                                     '2021-02-21',
-                                     '2021-02-20')
-
-print(ua.__str__())
