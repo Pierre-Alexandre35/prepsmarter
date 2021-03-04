@@ -1,4 +1,4 @@
-from prepsmarter.blueprints.user.validators import email_already_in_use, password_matching
+from prepsmarter.blueprints.user.validators import email_already_in_use, password_matching, is_strong_password
 
 class RegistrationForm():
     def __init__(self, email, pwd_1, pwd_2):
