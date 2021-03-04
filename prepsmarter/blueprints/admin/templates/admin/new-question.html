@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form method="POST" action="{{url_for('admin.add_contributor')}}">
+            <div>
+                <label for="contrib_name">Name</label>
+                <input type="text" name="contrib_name">
+            </div>
+
+            <div>
+                <label for="category">category</label>
+                <select name="category_id" id="">
+                    {% for category in categories %}
+                        <option value="{{ category[0] }}">{{category[1]}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="question">Question</label>
+            <textarea name="question" cols="30" rows="10"></textarea>
+            </div>
+
+            <div>
+                <label for="answer_a">Answer A</label>
+                <input type="text" name="answer_a">  
+            </div>
+
+            <div>
+                <label for="answer_b">Answer B</label>
+                <input type="text" name="answer_b">  
+            </div>
+
+            <div>
+                <label for="answer_c">Answer C</label>
+                <input type="text" name="answer_c">  
+            </div>
+
+            <div>
+                <select name="correct_answer" id="">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+            </div>
+
+ 
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
