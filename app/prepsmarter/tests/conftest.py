@@ -1,3 +1,4 @@
+'''
 import pytest
 
 from prepsmarter.app import create_app
@@ -35,3 +36,4 @@ def client(app):
     :return: Flask app client
     """
     yield app.test_client()
+'''
