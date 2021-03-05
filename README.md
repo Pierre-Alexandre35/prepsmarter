@@ -6,8 +6,8 @@
 Web application to provide Multiple Choice Questions ( MCQS) for many exams.  
 
 
-<div align="center">
+<p align="center">
 <a>![build](https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg) </a>
 <a>![coverage](docs/badges/coverage.svg)
 </a>
-<div>
+<p>
