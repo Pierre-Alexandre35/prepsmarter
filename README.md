@@ -1,5 +1,6 @@
 # test_prep
 
+![example workflow](https://github.com/github/docs/actions/workflows/main.yaml/badge.svg)
 
 
 #feb 27
@@ -18,4 +19,7 @@
 
 
 #march 4
-- 
+- Add form registration validators
+- .env
+- remove docker 
+- testing folder
