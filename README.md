@@ -1,6 +1,6 @@
 # test_prep
 
-![dfsfdsdf](https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg) ![coverage](docs/badges/coverage.svg)
+![build](https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg) ![coverage](docs/badges/coverage.svg)
 
 
 
