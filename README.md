@@ -1,21 +1,16 @@
-# test_prep
+![alt text](docs/logo.png)
 
 
+## Prepsmarter
 
-#feb 27
-
-- Working on the registration 
-# password equality 
-# email not already used 
-#password strong enough
+Web application to provide Multiple Choice Questions ( MCQS) for many exams.  
 
 
-#feb 28
-
-- Worked on the User blueprint
-- Separation of concerns: a User class to represent the user object, UserService to make opertions to the User and a UserRepository to interact with the database following a code review https://codereview.stackexchange.com/questions/256512/python-oop-web-app-flask-user-registration-class
-
-
-
-#march 4
-- 
+<p align="center">
+  <a title="build">
+    <img src="https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg" />
+  </a>
+  <a title="coverage">
+    <img src="docs/badges/coverage.svg" />
+  </a>
+</p>
