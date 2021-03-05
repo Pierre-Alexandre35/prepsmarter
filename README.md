@@ -1,7 +1,6 @@
 # test_prep
 
-![example workflow](https://github.com/github/docs/actions/workflows/main.yaml/badge.svg)
-
+![example workflow](https://github.com/Pierre-Alexandre35/test_prep/docs/actions/workflows/main.yaml/badge.svg)
 
 #feb 27
 
