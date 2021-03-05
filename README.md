@@ -13,4 +13,9 @@ Web application to provide Multiple Choice Questions ( MCQS) for many exams.
   <a title="coverage">
     <img src="docs/badges/coverage.svg" />
   </a>
+  <a title="status">
+    <img src="https://img.shields.io/badge/status-development-blue.svg" />
+  </a>
+
+
 </p>
