@@ -1,8 +1,13 @@
-# test_prep
-
 ![alt text](docs/logo.png)
 
-![build](https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg) ![coverage](docs/badges/coverage.svg)
+
+## Prepsmarter
+
+Web application to provide Multiple Choice Questions ( MCQS) for many exams.  
 
 
-
+<div align="center">
+<a>![build](https://github.com/Pierre-Alexandre35/test_prep/actions/workflows/main.yaml/badge.svg) </a>
+<a>![coverage](docs/badges/coverage.svg)
+</a>
+<div>
