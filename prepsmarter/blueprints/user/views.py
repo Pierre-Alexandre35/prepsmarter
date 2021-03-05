@@ -17,7 +17,6 @@ def register_user():
     form_email = request.form.get('email')
     form_password = request.form.get('psw')
     form_password_repeat = request.form.get('psw-repeat')
-    
     registration_form = RegistrationForm(form_email, form_password, form_password_repeat).validate_registration()
     
     if registration_form:
@@ -25,5 +24,5 @@ def register_user():
         user_repository = UserRepository(conn, 'users')
         user_repository.add_user(new_user)
         user_repository.save()
-        return "ok"
-    return "not ok"
+        return "ok" #will probably change return statements later on
+    return "not ok" #will probably change return statements later on
