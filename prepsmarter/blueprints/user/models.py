@@ -6,6 +6,7 @@ class User():
         self.active = active
 
         # Activity tracking
+        self.confirmed = False
         self.sign_in_count = sign_in_count
         self.current_sign_in_on = current_sign_in_on
         self.last_sign_in_on = last_sign_in_on

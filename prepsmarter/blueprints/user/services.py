@@ -2,6 +2,8 @@ from prepsmarter.blueprints.user.models import User
 import datetime
 from prepsmarter.blueprints.user.hashers import get_hashed_password
 from datetime import datetime
+from itsdangerous import URLSafeTimedSerializer
+
 
 class UserRepository():
     def __init__(self, conn, table):
@@ -9,6 +11,8 @@ class UserRepository():
         self.table = table  
     
     
+    #select exists(select 1 from users where email='pamousset75@gmail.com')
+
     def add_user(self, user):
         sql = "INSERT INTO users (email, password, is_active, sign_in_count, current_sign_in_on, last_sign_in_on) VALUES (%s, %s, %s, %s, %s, %s)"
         cursor = self.conn.cursor()
@@ -41,6 +45,9 @@ class UserService():
         new_user = User(email, password, today_date, active,
                         sign_in_count, today_date, today_date)
         return new_user
+    
+    def get_user_from_email(self, email):
+        
 
     def desactivate_user(self, User):
         if User.active == False:
